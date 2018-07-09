@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<groupId>com.amarques.test</groupId>
+	<artifactId>spring-boot-test</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	
+	<name>Spring Boot Test</name>
+    <url>https://github.com/alejandro-marques/spring-boot-test</url>
+    <inceptionYear>2018</inceptionYear>
+
+
+    <developers>
+        <developer>
+            <id>amarques</id>
+            <name>Alejandro Marques</name>
+            <email>amarques at paradigmadigital dot com</email>
+        </developer>
+    </developers>
+
+
+    <properties>
+        <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
+        <log4j.version>2.11.0</log4j.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+    
+
+    <dependencies>
+
+        <!-- ### SpringBoot ### -->
+
+        <!-- Includes rest services annotations (i. e. @RestController / @RequestMapping) -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <!-- Used to include every spring boot dependency when generating the service 
+            as a jar -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-dependencies</artifactId>
+            <version>${spring-boot.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <!-- Reloads service in eclipse whenever a change is made -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>${spring-boot.version}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+    
+
+    <build>
+        <plugins>
+        	
+        	<!--  Defines the java version used to compile -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
