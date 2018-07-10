@@ -23,9 +23,9 @@
     </developers>
 
 
-    <properties>        
+    <properties>
+    	<java.version>1.8</java.version>
         <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
-        <log4j.version>2.11.0</log4j.version>
         
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -36,15 +36,14 @@
 
         <!-- ### SpringBoot ### -->
 
-        <!-- Includes rest services annotations (i. e. @RestController / @RequestMapping) -->
+        <!-- Includes spring rest annotations (i. e. @RestController / @RequestMapping) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <version>${spring-boot.version}</version>
         </dependency>
 
-        <!-- Used to include every spring boot dependency when generating the service 
-            as a jar -->
+        <!-- Includes every spring boot dependency when building the application jar -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-dependencies</artifactId>
@@ -52,7 +51,7 @@
             <type>pom</type>
         </dependency>
 
-        <!-- Reloads service in eclipse whenever a change is made -->
+        <!-- Reloads spring application in eclipse whenever a change is made -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
@@ -65,13 +64,13 @@
     <build>
         <plugins>
         	
-        	<!--  Defines the java version used to compile -->
+        	<!--  Defines the compiler java version -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                 </configuration>
             </plugin>
             
