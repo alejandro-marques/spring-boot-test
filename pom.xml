@@ -23,9 +23,10 @@
     </developers>
 
 
-    <properties>
+    <properties>        
         <spring-boot.version>2.0.3.RELEASE</spring-boot.version>
         <log4j.version>2.11.0</log4j.version>
+        
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
@@ -73,19 +74,20 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-            <plugin>
-				<!-- Build an executable JAR -->
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.0</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<mainClass>org.amarques.spring.test.Application</mainClass>
-						</manifest>
-					</archive>
-				</configuration>
-			</plugin>
+            
+            <!-- Packages the spring boot application as an stand alone jar -->
+	        <plugin>
+	            <groupId>org.springframework.boot</groupId>
+	            <artifactId>spring-boot-maven-plugin</artifactId>
+	            <version>${spring-boot.version}</version>
+	            <executions>
+	                <execution>
+	                    <goals>
+	                        <goal>repackage</goal>
+	                    </goals>
+	                </execution>
+	            </executions>
+	        </plugin>
         </plugins>
     </build>
 
